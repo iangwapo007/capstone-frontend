@@ -1,0 +1,10 @@
+{
+  "appId": "com.bloodnet.app",
+  "appName": "bloodnet",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

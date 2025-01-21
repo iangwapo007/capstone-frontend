@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BloodNet</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <script type="module" src="./js/system/main.js"></script>
+    <script type="module" src="./js/utils/utils.js"></script>
+
+    <meta name="theme-color" content="#31d53d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=League Spartan"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Start of Navbar -->
+    <nav
+      class="navbar bg-body-tertiary fixed-bottom custom-shadow league-spartan-regular"
+    >
+      <div class="container-fluid">
+        <div class="d-flex justify-content-center w-100">
+          <div class="d-flex w-100" style="max-width: 600px">
+            <!-- Map Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="map.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/pin.png"
+                    alt="Map"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Map </span>
+              </a>
+            </div>
+
+            <!-- Find Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="find.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/search.png"
+                    alt="Find"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Find </span>
+              </a>
+            </div>
+
+            <!-- Nearby Option  -->
+            <!-- <div class="text-center flex-grow-1 opacity-50">
+              <a href="nearby.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/hospital.png"
+                    alt="Nearby"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text active-text"> Nearby </span>
+              </a>
+            </div> -->
+
+            <!-- Donor Option -->
+            <div class="text-center flex-grow-1 position-relative">
+              <a href="donor.html" class="nav-link">
+                <div class="focus">
+                  <span class="invisible">123456789asa</span>
+                </div>
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/donor(1).png"
+                    alt="Nearby"
+                    width="24px"
+                  /></button
+                ><br />
+                <span style="color: #b43929; font-weight: bold"> Donor </span>
+              </a>
+            </div>
+
+            <!-- Events Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="events.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/notification.png"
+                    alt="Events"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Events </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+    <div
+      style="background-color: #b43929; padding-top: 25px; padding-bottom: 10px"
+    >
+      <h3 class="text-center fw-semibold text-white">Be a Donor</h3>
+    </div>
+    <div class="container">
+      <div>
+        <img
+          class="w-75 mx-auto d-block"
+          src="./assets/imgs/donor.png"
+          alt=""
+          style="margin-top: 125px"
+        />
+      </div>
+      <div class="text-center">
+        <h3 class="text-center fw-bold">Be a Donor today!</h3>
+        <div class="mx-4">
+          <small class="mt-3" style="font-size: 17px"
+            >Join us in saving lives by becoming a blood donor. Every drop
+            counts and helps countless lives in need.</small
+          >
+          <a href="login.html">
+            <button
+              type="button"
+              class="btn rounded-2 mt-2 text-white w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#donor"
+              style="
+                background-color: #b43929;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+              "
+            >
+              Login
+            </button>
+          </a>
+
+          <a href="register.html"
+            ><button
+              type="button"
+              class="btn rounded-2 mt-3 text-white w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#donor"
+              style="
+                background-color: #b43929;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+              "
+            >
+              Register
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BloodNet</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <script type="module" src="./js/system/main.js"></script>
+
+    <script type="module" src="./js/auth/login.js"></script>
+
+    <meta name="theme-color" content="#31d53d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=League Spartan"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="backgroundimage1">
+    <a class="text-decoration-none text-black" href="donor.html"
+      ><div class="mt-2 ms-2">
+        <img
+          style="padding-bottom: 5px"
+          src="./assets/icon/left-arrow-black.png"
+          width="8px"
+          alt=""
+          srcset=""
+        />
+        <span class="ms-1">Back</span>
+      </div></a
+    >
+
+    <div class="mx-3" style="margin-top: 120px">
+      <div class="ms-2 d-flex align-items-center">
+        <div>
+          <h1 class="fw-bold pt-5" style="font-size: 35px">Login</h1>
+        </div>
+        <img
+          class="ms-auto w-25 me-4"
+          src="./assets/imgs/logo_for-white-background.png"
+          alt="Logo"
+        />
+      </div>
+
+      <p class="fs-5 ms-2 mt-3" style="color: #b43929">
+        Welcome to BloodNet+ Donor Portal
+      </p>
+
+      <div class="mt-5">
+        <form id="form_login" class="mx-2 pb-3 pt-2" action="">
+          <!-- Email Field -->
+          <div class="">
+            <span class="fs-5 ms-2">Email Address</span>
+            <div class="mt-1">
+              <small
+                ><input
+                  class="custom-input"
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  aria-label="email"
+                  required
+              /></small>
+            </div>
+          </div>
+          <!-- Notification -->
+          <div class="mt-2">
+            <span
+              class="alert d-none"
+              style="color: #b43929; font-size: 16px"
+              role="alert"
+            ></span>
+          </div>
+
+          <!-- Password Field -->
+          <div class="mt-4">
+            <span class="fs-5 ms-2">Password</span>
+            <div class="mt-1 position-relative">
+              <small>
+                <input
+                  class="custom-input"
+                  id="passwordInput"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  aria-label="password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="position-absolute end-0 top-0 mt-2 me-3 bg-transparent border-0"
+                  onclick="togglePassword('passwordInput', 'toggleIcon1')"
+                  aria-label="Toggle password visibility"
+                >
+                  <img
+                    class="opacity-75"
+                    style="margin-top: 5px"
+                    src="./assets/icon/see_password.png"
+                    alt="Show Password"
+                    id="toggleIcon1"
+                    width="15px"
+                  />
+                </button>
+              </small>
+            </div>
+          </div>
+          <div class="alert d-none" style="color: #b43929" role="alert"></div>
+
+          <button
+            id="login"
+            type="submit button"
+            class="btn py-2 rounded-2 mt-4 text-white w-100 d-flex align-items-center justify-content-center"
+            style="
+              background-color: #b43929;
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            "
+          >
+            Login
+          </button>
+        </form>
+      </div>
+      <p class="text-center mt-5">
+        Don't have an account yet? <br /><a
+          class="text-decoration-none"
+          href="register.html"
+          ><span style="color: #b43929">Create an Account.</span></a
+        >
+      </p>
+    </div>
+  </body>
+</html>

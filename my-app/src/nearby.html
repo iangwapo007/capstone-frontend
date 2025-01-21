@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BloodNet</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <script type="module" src="./js/system/main.js"></script>
+    <script type="module" src="./js/system/nearby.js"></script>
+
+    <meta name="theme-color" content="#31d53d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=League Spartan"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="backgroundcolor">
+    <!-- Start of Navbar -->
+    <nav
+      class="navbar bg-body-tertiary fixed-bottom custom-shadow league-spartan-regular"
+      style="z-index: 9999; position: fixed; width: 100%"
+    >
+      <div class="container-fluid">
+        <div class="d-flex justify-content-center w-100">
+          <div class="d-flex w-100" style="max-width: 600px">
+            <!-- Map Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="map.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/pin.png"
+                    alt="Map"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Map </span>
+              </a>
+            </div>
+
+            <!-- End of Map Option -->
+            <!-- Find Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="find.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/search.png"
+                    alt="Find"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Find </span>
+              </a>
+            </div>
+
+            <!-- End of Find Option -->
+
+            <!-- Nearby Option  -->
+            <div class="text-center flex-grow-1 position-relative">
+              <a href="nearby.html" class="nav-link">
+                <div class="focus">
+                  <span class="invisible">1234567891</span>
+                </div>
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/hospital (2).png"
+                    alt="Nearby"
+                    width="24px"
+                  /></button
+                ><br />
+                <span style="color: #b43929; font-weight: bold"> Nearby </span>
+              </a>
+            </div>
+
+            <!-- End of Nearby Option -->
+
+            <!-- Donor Option -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="donor.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/donor.png"
+                    alt="Events"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Donor </span>
+              </a>
+            </div>
+
+            <!-- Events Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="events.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/notification.png"
+                    alt="Events"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Events </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+
+    <!-- Display Nearby Centers -->
+    <div
+      style="background-color: #b43929; padding-top: 25px; padding-bottom: 10px"
+    >
+      <h3 class="text-center fw-semibold text-white">Nearby Centers</h3>
+    </div>
+    <div class="container mt-5">
+      <div class="container px-3">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="flex-grow-1 me-2">
+            <input
+              type="text"
+              class="custom-input"
+              style="height: 40px !important"
+              id="searchInput"
+              placeholder="Search for blood center or hospital"
+            />
+          </div>
+          <div>
+            <button
+              id="searchButton"
+              class="btn text-white pt-2"
+              style="background-color: #b43929"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TO DISPLAY -->
+    <div id="get_data">
+      <div role="status">
+        <div class="container mt-5 mb-5">
+          <div class="container">
+            <h5 class="placeholder-glow">
+              <span class="placeholder col-6 rounded-1"></span>
+            </h5>
+            <p class="placeholder-glow rounded-1">
+              <span class="placeholder col-7 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-6 rounded-1"></span>
+              <span class="placeholder col-8 rounded-1"></span>
+            </p>
+            <p class="placeholder-glow col-6">
+              <span
+                class="placeholder col-6 rounded-1"
+                style="background-color: #b43929; opacity: 100%"
+                ;
+              ></span>
+            </p>
+          </div>
+        </div>
+        <div class="container mt-3 mb-5">
+          <div class="container">
+            <h5 class="placeholder-glow">
+              <span class="placeholder col-6 rounded-1"></span>
+            </h5>
+            <p class="placeholder-glow rounded-1">
+              <span class="placeholder col-7 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-6 rounded-1"></span>
+              <span class="placeholder col-8 rounded-1"></span>
+            </p>
+            <p class="placeholder-glow col-6">
+              <span
+                class="placeholder col-6 rounded-1"
+                style="background-color: #b43929; opacity: 100%"
+                ;
+              ></span>
+            </p>
+          </div>
+        </div>
+        <div class="container mt-3 mb-5">
+          <div class="container">
+            <h5 class="placeholder-glow">
+              <span class="placeholder col-6 rounded-1"></span>
+            </h5>
+            <p class="placeholder-glow rounded-1">
+              <span class="placeholder col-7 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-6 rounded-1"></span>
+              <span class="placeholder col-8 rounded-1"></span>
+            </p>
+            <p class="placeholder-glow col-6">
+              <span
+                class="placeholder col-6 rounded-1"
+                style="background-color: #b43929; opacity: 100%"
+                ;
+              ></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+
+    <div
+      class="modal fade"
+      id="center"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="position-relative">
+            <div>
+              <img id="modal-event-image" src="" class="w-100" height="180px" />
+              <div class="gradient-overlay">
+                <h5
+                  id="modal-center-name"
+                  class="card-title fw-bold position-absolute bottom-0 mx-2 start-0 text-white"
+                  style="text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24)"
+                ></h5>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn-secondary mt-4 ms-5 position-absolute top-0 start-0 translate-middle btn rounded-2 text-white d-flex justify-content-center align-items-center"
+            data-bs-dismiss="modal"
+            style="height: 25px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+          >
+            <img
+              class=""
+              src="./assets/icon/left-arrow.png"
+              alt="Icon"
+              style="width: 8px; height: 8px"
+            />
+            <span class="ms-1 mt-1"><small>Back</small></span>
+          </button>
+
+          <div class="card-body modal-body">
+            <div
+              class="container rounded-3 py-3 px-3"
+              style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+            >
+              <div class="mb-2 d-flex align-items-start">
+                <img src="./assets/icon/address.png" alt="" width="15px" />
+                <small id="modal-center-address" class="ps-2"></small>
+              </div>
+              <div class="my-2 d-flex align-items-start">
+                <img src="./assets/icon/phone_num.png" alt="" width="15px" />
+                <small id="modal-center-contact" class="ps-2"></small>
+              </div>
+              <div class="my-2 d-flex align-items-start">
+                <img
+                  class="mail-margin"
+                  src="./assets/icon/email.png"
+                  alt=""
+                  width="15px"
+                />
+                <small id="modal-center-email" class="ps-2"></small>
+              </div>
+              <div class="mt-2 d-flex align-items-start">
+                <img
+                  class="hours-margin"
+                  src="./assets/icon/center.png"
+                  alt=""
+                  width="15px"
+                />
+                <small id="modal-center-type" class="ps-2"></small>
+              </div>
+              <div class="mt-2 d-flex align-items-start">
+                <img
+                  class="hours-margin"
+                  src="./assets/icon/operating_hours.png"
+                  alt=""
+                  width="15px"
+                />
+                <small id="modal-center-time" class="ps-2"></small>
+              </div>
+              <a href="donor.html"
+                ><button
+                  type="button"
+                  class="btn rounded-2 mt-2 text-white w-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#donor"
+                  style="
+                    background-color: #b43929;
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                  "
+                >
+                  Register as Donor
+                </button></a
+              >
+            </div>
+            <div
+              class="container mt-3 py-3 rounded-3"
+              style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+            >
+              <span class="fw-bold">Description:</span><br />
+              <div class="ms-3 me-2">
+                <small id="modal-center-description"></small>
+              </div>
+              <div class="mt-3">
+                <span class="fw-bold">Available Stocks:</span>
+
+                <small>
+                  <div>
+                    <div
+                      class="row mt-2 mx-2 text-white fw-semibold text-center"
+                    >
+                      <div
+                        class="col py-2 bg-secondary custom-margin rounded-start-3"
+                        style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                      >
+                        Blood Type
+                      </div>
+                      <div
+                        class="col py-2 bg-secondary custom-margin"
+                        style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                      >
+                        Component
+                      </div>
+                      <div
+                        class="col py-2 bg-secondary custom-margin rounded-end-3"
+                        style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                      >
+                        Units
+                      </div>
+                    </div>
+
+                    <div id="modal-center-stocks"></div>
+                  </div>
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn rounded-2 m-2 text-white"
+            style="
+              background-color: #b43929;
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            "
+          >
+            Go to Map
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

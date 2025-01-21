@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BloodNet</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <script type="module" src="./js/system/main.js"></script>
+    <script type="module" src="./js/utils/utils.js"></script>
+    <script type="module" src="./js/system/setup.js"></script>
+
+    <meta name="theme-color" content="#31d53d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=League Spartan"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="backgroundimage1">
+    <img
+      class="d-flex align-items-center justify-content-center profile-image"
+      src="./assets/icon/profile1.png"
+      alt=""
+      srcset=""
+      style="
+        width: 130px;
+        border: 2px solid #b43929;
+        border-radius: 50%;
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+      "
+    />
+
+    <div style="padding-top: 85px">
+      <form
+        id="form_update"
+        style="box-shadow: rgba(0, 0, 0, 0.55) 0px 3px 8px"
+      >
+        <div class="form-header mt-5 pt-4">
+          <h2 class="mb-0 fw-bold fs-4">Complete Profile Setup</h2>
+          <p style="font-size: 15px">
+            Keep your health details up-to-date for safe and suitable donation
+            matches.
+          </p>
+        </div>
+
+        <div class="alert-container">
+          <span class="alert d-none" role="alert"></span>
+        </div>
+
+        <div class="form-body">
+          <div class="form-header">
+            <h3>Blood Center</h3>
+          </div>
+          <div class="form-floating my-4">
+            <select
+              id="get_center"
+              class="form-control"
+              name="user_id"
+              required
+            >
+              <option value="" disabled selected>
+                Select the blood center where you'd like to register.
+              </option>
+            </select>
+            <label for="blood_center">Blood Center</label>
+          </div>
+
+          <div class="section-divider">
+            <hr />
+          </div>
+
+          <div class="form-header">
+            <h3>Personal Information</h3>
+          </div>
+
+          <div class="form-floating my-4">
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              class="form-control"
+              placeholder=" "
+              required
+            />
+            <label for="fullname">Full Name</label>
+          </div>
+
+          <!-- <div class="form-floating my-4">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder=" "
+            />
+            <label for="email">Email Address</label>
+          </div> -->
+
+          <div class="d-flex my-4">
+            <div class="form-floating me-4" style="flex: 1">
+              <input
+                type="date"
+                id="birthday"
+                name="birthday"
+                class="form-control"
+                placeholder=" "
+                style="width: 200px"
+                required
+              />
+              <label for="birthday">Birthday</label>
+            </div>
+
+            <div class="form-floating" style="flex: 1">
+              <input
+                type="number"
+                id="age"
+                name="age"
+                class="form-control"
+                placeholder=" "
+                required
+              />
+              <label for="age">Age</label>
+            </div>
+          </div>
+
+          <div class="form-floating my-4">
+            <input
+              type="text"
+              id="address"
+              name="address"
+              class="form-control"
+              placeholder=" "
+              required
+            />
+            <label for="address">Address</label>
+          </div>
+
+          <div class="d-flex my-4">
+            <div class="input-group me-4" style="flex: 1; width: 200px">
+              <span class="input-group-text">09</span>
+              <div class="form-floating flex-grow-1">
+                <input
+                  type="tel"
+                  id="phonenumber"
+                  name="phonenumber"
+                  class="form-control"
+                  placeholder=" "
+                  required
+                />
+                <label for="phonenumber">Phone Number</label>
+              </div>
+            </div>
+
+            <div class="form-floating" style="flex: 1">
+              <select id="gender" class="form-control" name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+              <label for="gender">Gender</label>
+            </div>
+          </div>
+
+          <div class="form-floating my-4">
+            <select
+              id="blood_type"
+              class="form-control"
+              name="blood_type"
+              required
+            >
+              <option value="" disabled selected>Select your blood type</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+            <label for="blood_type">Blood Type</label>
+          </div>
+
+          <div class="section-divider">
+            <hr />
+          </div>
+
+          <div class="form-header">
+            <h3>Health Information</h3>
+          </div>
+
+          <div class="form-floating my-4">
+            <input
+              type="text"
+              id="medical_history"
+              name="medical_history"
+              class="form-control"
+              placeholder=" "
+            />
+            <label for="medical_history my-4">Medical History</label>
+          </div>
+
+          <div class="form-floating my-4">
+            <input
+              type="text"
+              id="current_medications"
+              name="current_medications"
+              class="form-control"
+              placeholder=" "
+            />
+            <label for="current_medications my-4">Current Medications</label>
+          </div>
+
+          <div class="form-floating my-4">
+            <input
+              type="text"
+              id="allergies"
+              name="allergies"
+              class="form-control"
+              placeholder=" "
+            />
+            <label for="allergies">Allergies</label>
+          </div>
+
+          <div class="section-divider">
+            <hr />
+          </div>
+
+          <div class="form-header">
+            <h3>Previous Donation</h3>
+          </div>
+
+          <div class="form-floating my-4">
+            <input
+              type="date"
+              id="previous_donation"
+              name="previous_donation"
+              class="form-control"
+              placeholder=" "
+            />
+            <label for="allergies">Previous Donation</label>
+          </div>
+
+          <div class="section-divider">
+            <hr />
+          </div>
+
+          <div class="form-header">
+            <h3>Emergency Contact</h3>
+          </div>
+
+          <div class="form-floating my-4">
+            <input
+              type="text"
+              id="emergency_name"
+              name="emergency_name"
+              class="form-control"
+              placeholder=" "
+            />
+            <label for="emergency_name">Emergency Contact Name</label>
+          </div>
+
+          <div class="d-flex my-4">
+            <div class="input-group me-4" style="flex: 1; width: 200px">
+              <span class="input-group-text">09</span>
+              <div class="form-floating flex-grow-1">
+                <input
+                  type="tel"
+                  id="emergency_phonenumber"
+                  name="emergency_phonenumber"
+                  class="form-control"
+                  placeholder=" "
+                />
+                <label for="emergency_phonenumber">Phone Number</label>
+              </div>
+            </div>
+
+            <div class="form-floating" style="flex: 1">
+              <input
+                type="text"
+                id="emergency_relationship"
+                name="emergency_relationship"
+                class="form-control"
+                placeholder=" "
+              />
+              <label for="emergency_relationship">Relationship</label>
+            </div>
+          </div>
+
+          <!-- CHECKBOX -->
+
+          <div class="checkbox-container">
+            <input
+              type="checkbox"
+              id="customCheckbox"
+              class="custom-checkbox"
+              required
+            />
+            <label class="custom-checkbox-padding" for="customCheckbox">
+              I consent to the collection and use of my personal data for blood
+              donation purposes.
+            </label>
+          </div>
+
+          <div class="form-group mt-4">
+            <button
+              id="confirm"
+              type="submit"
+              class="submit-btn d-flex align-items-center justify-content-center"
+              disabled
+            >
+              Confirm Setup
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Modal HTML (Initially Visible) -->
+    <div id="customModal" class="custom-modal-overlay d-show">
+      <div class="custom-modal-content bg-white rounded-3 pt-5">
+        <div>
+          <img
+            class="w-50 mb-3 mx-auto d-block"
+            src="./assets/imgs/first_time_setup.png"
+            alt=""
+          />
+          <p class="text-center mt-4 fs-4 fw-bold" style="color: #b43929">
+            Welcome to your first time account setup!
+          </p>
+          <p class="text-center mt-3 fs-5">
+            Join us by filling out the required details and take the first step
+            to becoming a donor.
+          </p>
+          <!-- Dismiss Button -->
+          <button
+            id="dismissButton"
+            type="button"
+            class="btn rounded-2 mt-4 mb-3 text-white w-100"
+            style="
+              background-color: #b43929;
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            "
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dismissButton = document.getElementById("dismissButton");
+      const modal = document.getElementById("customModal");
+
+      dismissButton.addEventListener("click", () => {
+        modal.classList.add("hidden"); // Hides the modal by adding the 'hidden' class
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const checkbox = document.getElementById("customCheckbox");
+      const submitButton = document.getElementById("confirm");
+
+      // Disable submit button initially
+      submitButton.disabled = true;
+
+      // Add event listener to checkbox
+      checkbox.addEventListener("change", () => {
+        // Toggle button's disabled property based on checkbox state
+        submitButton.disabled = !checkbox.checked;
+      });
+    });
+  </script>
+</html>
+
+<!-- CHECKBOX -->
+<!-- <div
+  class="custom-checkbox-container d-flex align-items-start mx-3 rounded-3 bg-white"
+  style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+>
+  <div style="padding-left: 15px; padding-bottom: 15px; padding-right: 15px">
+    <input
+      type="checkbox"
+      id="customCheckbox"
+      class="custom-checkbox"
+      required
+    />
+    <label class="custom-checkbox-padding" for="customCheckbox">
+      I consent to the collection and use of my personal data for blood donation
+      purposes.
+    </label>
+  </div>
+</div> -->

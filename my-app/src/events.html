@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BloodNet</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <script type="module" src="./js/system/main.js"></script>
+    <script type="module" src="./js/utils/utils.js"></script>
+    <script type="module" src="./js/system/events.js"></script>
+
+    <meta name="theme-color" content="#31d53d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=League Spartan"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="backgroundcolor">
+    <!-- Start of Navbar -->
+    <nav
+      class="navbar bg-body-tertiary fixed-bottom custom-shadow league-spartan-regular"
+      style="z-index: 9999; position: fixed; width: 100%"
+    >
+      <div class="container-fluid">
+        <div class="d-flex justify-content-center w-100">
+          <div class="d-flex w-100" style="max-width: 600px">
+            <!-- Map Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="map.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/pin.png"
+                    alt="Map"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Map </span>
+              </a>
+            </div>
+
+            <!-- End of Map Option -->
+            <!-- Find Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="find.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/search.png"
+                    alt="Find"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Find </span>
+              </a>
+            </div>
+
+            <!-- End of Find Option -->
+
+            <!-- Nearby Option  -->
+            <!-- <div class="text-center flex-grow-1 opacity-50">
+              <a href="nearby.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/hospital.png"
+                    alt="Nearby"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text active-text"> Nearby </span>
+              </a>
+            </div> -->
+
+            <!-- End of Nearby Option -->
+
+            <!-- Donor Option -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="donor.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/donor.png"
+                    alt="Events"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Donor </span>
+              </a>
+            </div>
+
+            <!-- Events Option  -->
+            <div class="text-center flex-grow-1 position-relative">
+              <a href="events.html" class="nav-link">
+                <div class="focus">
+                  <span class="invisible">123456789asa</span>
+                </div>
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/notification (1).png"
+                    alt="Nearby"
+                    width="24px"
+                  /></button
+                ><br />
+                <span style="color: #b43929; font-weight: bold"> Events </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+    <div
+      style="background-color: #b43929; padding-top: 25px; padding-bottom: 10px"
+    >
+      <h3 class="text-center fw-semibold text-white">Upcoming Events</h3>
+    </div>
+
+    <div id="get_data" class="mt-5">
+      <div role="status" style="margin-top: 85px">
+        <div class="container my-5">
+          <div class="container">
+            <h5 class="placeholder-glow">
+              <span class="placeholder col-6 rounded-1"></span>
+            </h5>
+            <p class="placeholder-glow rounded-1">
+              <span class="placeholder col-7 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-6 rounded-1"></span>
+              <span class="placeholder col-8 rounded-1"></span>
+            </p>
+            <p class="placeholder-glow col-6">
+              <span
+                class="placeholder col-6 rounded-1"
+                style="background-color: #b43929; opacity: 100%"
+                ;
+              ></span>
+            </p>
+          </div>
+        </div>
+        <div class="container my-5">
+          <div class="container">
+            <h5 class="placeholder-glow">
+              <span class="placeholder col-6 rounded-1"></span>
+            </h5>
+            <p class="placeholder-glow rounded-1">
+              <span class="placeholder col-7 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-6 rounded-1"></span>
+              <span class="placeholder col-8 rounded-1"></span>
+            </p>
+            <p class="placeholder-glow col-6">
+              <span
+                class="placeholder col-6 rounded-1"
+                style="background-color: #b43929; opacity: 100%"
+                ;
+              ></span>
+            </p>
+          </div>
+        </div>
+        <div class="container my-5">
+          <div class="container">
+            <h5 class="placeholder-glow">
+              <span class="placeholder col-6 rounded-1"></span>
+            </h5>
+            <p class="placeholder-glow rounded-1">
+              <span class="placeholder col-7 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-4 rounded-1"></span>
+              <span class="placeholder col-6 rounded-1"></span>
+              <span class="placeholder col-8 rounded-1"></span>
+            </p>
+            <p class="placeholder-glow col-6">
+              <span
+                class="placeholder col-6 rounded-1"
+                style="background-color: #b43929; opacity: 100%"
+                ;
+              ></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="container">
+      <div
+        class="modal fade"
+        id="eventModal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="card">
+              <div class="position-relative">
+                <img
+                  id="modal-event-image"
+                  class="card-img-top"
+                  height="180px"
+                  alt="Event Image"
+                />
+                <div class="gradient-overlay">
+                  <h4
+                    id="modal-event-name"
+                    class="card-title fw-bold position-absolute bottom-0 mx-2 start-0 text-white pb-4"
+                    style="text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24)"
+                  ></h4>
+                </div>
+                <div
+                  class="d-flex align-items-start position-absolute bottom-0 pb-2 mx-2 start-0 text-white"
+                >
+                  <img
+                    class="hours-margin"
+                    src="./assets/icon/calendar_white.png"
+                    alt=""
+                    width="15px"
+                  />
+                  <small class="ps-2 league-spartan-regular text-white">
+                    <small id="modal-event-date&time"></small>
+                    <small
+                      id="modal-event-status"
+                      class="fw-bold text-white rounded-1 px-2 py-1 ms-2"
+                      style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                    ></small>
+                  </small>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                class="mt-4 ms-5 position-absolute top-0 start-0 btn-secondary translate-middle btn rounded-2 text-white d-flex justify-content-center align-items-center"
+                data-bs-dismiss="modal"
+                style="
+                  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                  height: 25px;
+                "
+              >
+                <img
+                  class=""
+                  src="./assets/icon/left-arrow.png"
+                  alt="Icon"
+                  style="width: 8px; height: 8px"
+                />
+                <span class="ms-1 mt-1"><small>Back</small></span>
+              </button>
+
+              <div class="event-padding">
+                <!-- 1ST BLOCK -->
+                <div class="container pt-3">
+                  <div
+                    class="container py-3 px-3 rounded-3"
+                    style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                  >
+                    <div class="d-flex align-items-start align-items-center">
+                      <img
+                        class="mt-1"
+                        src="./assets/icon/location.png"
+                        alt=""
+                        width="15px"
+                      />
+                      <span class="mt-1 ps-2 fw-bold">Event Location </span>
+                    </div>
+
+                    <div class="ms-4 me-2">
+                      <small id="modal-event-location" class=""></small>
+                    </div>
+
+                    <div
+                      class="d-flex align-items-start align-items-center mt-2"
+                    >
+                      <img
+                        class=""
+                        src="./assets/icon/details.png"
+                        alt=""
+                        width="15px"
+                      />
+                      <span class="mt-1 ps-2 fw-bold">Description </span>
+                    </div>
+
+                    <div class="ms-4 me-2">
+                      <small id="modal-event-description" class=""></small>
+                    </div>
+                  </div>
+                </div>
+                <!-- 2ND BLOCK -->
+                <div class="container mt-3">
+                  <div
+                    class="py-3 px-3 rounded-3"
+                    style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                  >
+                    <div class="d-flex align-items-start align-items-center">
+                      <img
+                        class=""
+                        src="./assets/icon/details.png"
+                        alt=""
+                        width="15px"
+                      />
+                      <span class="mt-1 ps-2 fw-bold">Details </span>
+                    </div>
+                    <div class="mx-3">
+                      <small>
+                        <div class="my-2">
+                          <img
+                            src="./assets/icon/gender.png"
+                            width="15px"
+                            alt=""
+                          />
+                          <span
+                            ><b>Gender </b><span id="modal-event-gender"></span>
+                          </span>
+                        </div>
+
+                        <div class="my-2">
+                          <img
+                            class="mb-2"
+                            src="./assets/icon/weight.png"
+                            width="15px"
+                            alt=""
+                          />
+                          <span
+                            ><b>Weight </b><span id="modal-event-weight"></span
+                          ></span>
+                        </div>
+
+                        <div class="my-2">
+                          <img
+                            class="mb-2"
+                            src="./assets/icon/age-group.png"
+                            width="15px"
+                            alt=""
+                          />
+                          <span
+                            ><b>Age </b><span id="modal-event-age"></span
+                          ></span>
+                        </div>
+                        <div class="mt-2 d-flex align-items-start">
+                          <img
+                            src="./assets/icon/phone_num.png"
+                            alt=""
+                            width="15px"
+                          />
+                          <small id="modal-event-contact" class="ps-2"></small>
+                        </div>
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

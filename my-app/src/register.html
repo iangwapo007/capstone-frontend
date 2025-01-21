@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BloodNet</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <script type="module" src="./js/system/main.js"></script>
+    <script type="module" src="./js/auth/register.js"></script>
+
+    <meta name="theme-color" content="#31d53d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=League Spartan"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="backgroundimage1">
+    <a class="text-decoration-none text-black" href="donor.html"
+      ><div class="mt-2 ms-2">
+        <img
+          style="padding-bottom: 5px"
+          src="./assets/icon/left-arrow-black.png"
+          width="8px"
+          alt=""
+          srcset=""
+        />
+        <span class="ms-1">Back</span>
+      </div></a
+    >
+
+    <div class="mx-3" style="margin-top: 120px">
+      <div class="ms-2 d-flex align-items-center">
+        <div>
+          <h1 class="fw-bold pt-5" style="font-size: 35px">Register</h1>
+        </div>
+        <img
+          class="ms-auto w-25 me-4"
+          src="./assets/imgs/logo_for-white-background.png"
+          alt="Logo"
+        />
+      </div>
+
+      <p class="fs-5 ms-2 mt-3" style="color: #b43929">
+        Welcome to BloodNet+ Donor Portal
+      </p>
+
+      <div class="mt-5">
+        <form id="form_register">
+          <!-- Email Field -->
+          <div class="mx-2 pb-3 pt-2">
+            <span class="fs-5 ms-2">Email Address</span>
+            <div class="mt-1">
+              <small>
+                <input
+                  class="custom-input"
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Email Address"
+                  aria-label="email"
+                  required
+                />
+              </small>
+            </div>
+          </div>
+          <!-- Notification -->
+          <span
+            class="alert d-none"
+            style="color: #b43929; font-size: 16px"
+            role="alert"
+          ></span>
+          <!-- Password Field -->
+          <div class="mt-3">
+            <span class="fs-5 ms-2">Password</span>
+            <div class="mt-1 position-relative">
+              <small>
+                <input
+                  class="custom-input"
+                  id="passwordInput"
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  aria-label="password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="position-absolute end-0 top-0 mt-2 me-3 bg-transparent border-0"
+                  onclick="togglePassword('passwordInput', 'toggleIcon1')"
+                  aria-label="Toggle password visibility"
+                >
+                  <img
+                    class="opacity-75"
+                    style="margin-top: 5px"
+                    src="./assets/icon/see_password.png"
+                    alt="Show Password"
+                    id="toggleIcon1"
+                    width="15px"
+                  />
+                </button>
+              </small>
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="mt-4">
+            <span class="fs-5 ms-2">Confirm Password</span>
+            <div class="mt-1 position-relative">
+              <small>
+                <input
+                  class="custom-input"
+                  id="confirm_password"
+                  name="password_confirmation"
+                  type="password"
+                  placeholder="Confirm Password"
+                  aria-label="password_confirmation"
+                  required
+                />
+                <button
+                  type="button"
+                  class="position-absolute end-0 top-0 mt-2 me-3 bg-transparent border-0"
+                  onclick="togglePassword('confirm_password', 'toggleIcon2')"
+                  aria-label="Toggle password visibility"
+                >
+                  <img
+                    class="opacity-75"
+                    style="margin-top: 5px"
+                    src="./assets/icon/see_password.png"
+                    alt="Show Password"
+                    id="toggleIcon2"
+                    width="15px"
+                  />
+                </button>
+              </small>
+            </div>
+          </div>
+
+          <button
+            id="register"
+            type="submit button"
+            class="btn py-2 rounded-2 mt-4 text-white w-100 d-flex align-items-center justify-content-center"
+            style="
+              background-color: #b43929;
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            "
+          >
+            Register
+          </button>
+        </form>
+      </div>
+
+      <p class="text-center mt-4">
+        Already had an account? <br /><a
+          class="text-decoration-none"
+          href="login.html"
+          ><span style="color: #b43929">Login to Account.</span></a
+        >
+      </p>
+    </div>
+    <!-- Modal HTML (Always Open) -->
+    <div class="custom-modal-overlay d-none">
+      <div class="custom-modal-content bg-white rounded-3 pt-4">
+        <div>
+          <img
+            class="w-25 mb-3 mx-auto d-block"
+            src="./assets/imgs/success.png"
+            alt=""
+          />
+
+          <p class="text-center mt-4 fs-4 fw-bold" style="color: #b43929">
+            Your account has been successfully registered!
+          </p>
+          <p class="text-center mt-3 fs-5">
+            Redirecting to Login page, please wait for a few seconds.
+          </p>
+
+          <div
+            class="spinner-border mx-auto d-block mb-2"
+            style="color: #b43929"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

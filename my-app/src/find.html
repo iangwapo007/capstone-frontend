@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BloodNet</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <script type="module" src="./js/system/main.js"></script>
+    <script type="module" src="./js/system/find.js"></script>
+
+    <meta name="theme-color" content="#31d53d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=League Spartan"
+      rel="stylesheet"
+    />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ZLIPWC70d4HqdODaS1zopmod2YXUd94&map_ids=bbc70c6f1eb4afd9&loading=async"></script>
+  </head>
+  <body class="backgroundcolor" style="font-family: 'League Spartan'">
+    <!-- Start of Navbar -->
+    <nav
+      class="navbar bg-body-tertiary fixed-bottom custom-shadow league-spartan-regular"
+      style="z-index: 9999; position: fixed; width: 100%"
+    >
+      <div class="container-fluid">
+        <div class="d-flex justify-content-center w-100">
+          <div class="d-flex w-100" style="max-width: 600px">
+            <!-- Map Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="map.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/pin.png"
+                    alt="Map"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Map </span>
+              </a>
+            </div>
+
+            <!-- End of Map Option -->
+
+            <!-- Find Option  -->
+            <div class="text-center flex-grow-1 position-relative">
+              <a href="find.html" class="nav-link">
+                <div class="focus">
+                  <span class="invisible">123456789asa</span>
+                </div>
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/search (1).png"
+                    alt="Find"
+                    width="24px"
+                  /></button
+                ><br />
+                <span style="color: #b43929; font-weight: bold"> Find </span>
+              </a>
+            </div>
+
+            <!-- End of Find Option -->
+
+            <!-- Nearby Option  -->
+            <!-- <div class="text-center flex-grow-1 opacity-50">
+              <a href="nearby.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/hospital.png"
+                    alt="Nearby"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text active-text"> Nearby </span>
+              </a>
+            </div> -->
+
+            <!-- End of Nearby Option -->
+
+            <!-- Donor Option -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="donor.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/donor.png"
+                    alt="Events"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Donor </span>
+              </a>
+            </div>
+
+            <!-- Events Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="events.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/notification.png"
+                    alt="Events"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Events </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+
+    <div
+      style="background-color: #b43929; padding-top: 25px; padding-bottom: 10px"
+    >
+      <h3 class="text-center fw-semibold text-white">Find Blood</h3>
+    </div>
+    <div class="container mt-5">
+      <div class="container">
+        <div
+          class="form-header d-flex justify-content-between align-items-center"
+        >
+          <h5 class="fw-bold mb-0">Search for Available Blood Types</h5>
+          <img
+            id="popover1"
+            src="./assets/icon/questionMark.png"
+            style="width: 20px; cursor: pointer"
+            alt="Popover Trigger"
+            data-bs-toggle="popover"
+            data-bs-title="Blood Type Compatibility"
+            data-bs-content="<strong>O Positive:</strong><br>
+  Can give to: O+, A+, B+, AB+<br>
+  Can receive from: O+, O-<br><br>
+  <strong>A Positive:</strong><br>
+  Can give to: A+, AB+<br>
+  Can receive from: A+, A-, O+, O-<br><br>
+  <strong>B Positive:</strong><br>
+  Can give to: B+, AB+<br>
+  Can receive from: B+, B-, O+, O-<br><br>
+  <strong>AB Positive:</strong><br>
+  Can give to: AB+ only<br>
+  Can receive from: All blood types<br><br>
+  <strong>O Negative:</strong><br>
+  Can give to: All blood types<br>
+  Can receive from: O-<br><br>
+  <strong>A Negative:</strong><br>
+  Can give to: A-, A+, AB-, AB+<br>
+  Can receive from: A-, O-<br><br>
+  <strong>B Negative:</strong><br>
+  Can give to: B-, B+, AB-, AB+<br>
+  Can receive from: B-, O-<br><br>
+  <strong>AB Negative:</strong><br>
+  Can give to: AB-, AB+<br>
+  Can receive from: AB-, A-, B-, O-"
+          />
+        </div>
+
+        <div class="mt-3 d-flex align-items-center">
+          <!-- Blood Type Dropdown -->
+          <div class="me-2 flex-grow-1 w-75">
+            <select
+              class="form-select py-2 shadow-sm text-decoration-none"
+              id="bloodTypeSelect"
+              aria-label="Blood Type Select"
+              name="blood_type"
+            >
+              <option value="None" disabled selected>Select Blood Type</option>
+              <option value="None">None</option>
+              <option value="O-">O-</option>
+              <option value="O+">O+</option>
+              <option value="A-">A-</option>
+              <option value="A+">A+</option>
+              <option value="B-">B-</option>
+              <option value="B+">B+</option>
+              <option value="AB-">AB-</option>
+              <option value="AB+">AB+</option>
+            </select>
+          </div>
+
+          <!-- Component Dropdown -->
+          <div class="me-2 flex-grow-1">
+            <select
+              class="form-select py-2 shadow-sm text-decoration-none"
+              id="componentSelect"
+              aria-label="Component Select"
+              name="component"
+            >
+              <option value="None" disabled selected>Component</option>
+              <option value="None">None</option>
+              <option value="Whole Blood">Whole Blood</option>
+              <option value="Red Blood Cells">Red Blood Cells</option>
+              <option value="White Blood Cells">White Blood Cells</option>
+              <option value="Platelets">Platelets</option>
+              <option value="Plasma">Plasma</option>
+              <option value="Cryoprecipitate">Cryoprecipitate</option>
+              <option value="Granulocytes">Granulocytes</option>
+            </select>
+          </div>
+
+          <!-- Search Button -->
+          <div>
+            <button
+              class="btn text-white pt-2"
+              style="background-color: #b43929"
+              id="searchButton"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-4 pb-2 rounded-3">
+          <h5 class="ps-3 fw-bold">Available Blood</h5>
+
+          <div id="data-container" class="mt-4">
+            <div role="status">
+              <div class="container mb-5">
+                <div class="container">
+                  <h5 class="placeholder-glow">
+                    <span class="placeholder col-6 rounded-1"></span>
+                  </h5>
+                  <p class="placeholder-glow rounded-1">
+                    <span class="placeholder col-7 rounded-1"></span>
+                    <span class="placeholder col-4 rounded-1"></span>
+                    <span class="placeholder col-4 rounded-1"></span>
+                    <span class="placeholder col-6 rounded-1"></span>
+                    <span class="placeholder col-8 rounded-1"></span>
+                  </p>
+                  <p class="placeholder-glow col-6">
+                    <span
+                      class="placeholder col-6 rounded-1"
+                      style="background-color: #b43929; opacity: 100%"
+                      ;
+                    ></span>
+                  </p>
+                </div>
+              </div>
+              <div class="container mt-3 mb-5">
+                <div class="container">
+                  <h5 class="placeholder-glow">
+                    <span class="placeholder col-6 rounded-1"></span>
+                  </h5>
+                  <p class="placeholder-glow rounded-1">
+                    <span class="placeholder col-7 rounded-1"></span>
+                    <span class="placeholder col-4 rounded-1"></span>
+                    <span class="placeholder col-4 rounded-1"></span>
+                    <span class="placeholder col-6 rounded-1"></span>
+                    <span class="placeholder col-8 rounded-1"></span>
+                  </p>
+                  <p class="placeholder-glow col-6">
+                    <span
+                      class="placeholder col-6 rounded-1"
+                      style="background-color: #b43929; opacity: 100%"
+                      ;
+                    ></span>
+                  </p>
+                </div>
+              </div>
+              <div class="container mt-3 mb-5">
+                <div class="container">
+                  <h5 class="placeholder-glow">
+                    <span class="placeholder col-6 rounded-1"></span>
+                  </h5>
+                  <p class="placeholder-glow rounded-1">
+                    <span class="placeholder col-7 rounded-1"></span>
+                    <span class="placeholder col-4 rounded-1"></span>
+                    <span class="placeholder col-4 rounded-1"></span>
+                    <span class="placeholder col-6 rounded-1"></span>
+                    <span class="placeholder col-8 rounded-1"></span>
+                  </p>
+                  <p class="placeholder-glow col-6">
+                    <span
+                      class="placeholder col-6 rounded-1"
+                      style="background-color: #b43929; opacity: 100%"
+                      ;
+                    ></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal HTML (Initially Visible) -->
+    <div id="customModal" class="custom-modal-overlay d-show">
+      <div class="custom-modal-content bg-white rounded-3 pt-5">
+        <div>
+          <img
+            class="w-50 mb-3 mx-auto d-block"
+            src="./assets/icon/requirements.png"
+            alt=""
+          />
+          <p class="text-center mt-4 fs-4 fw-bold" style="color: #b43929">
+            Important Reminder!
+          </p>
+          <p class="text-center mt-3 fs-5">
+            Make sure to visit the hospital first and gather all required
+            documents before collecting the blood.
+          </p>
+          <!-- Dismiss Button -->
+          <button
+            id="dismissButton"
+            type="button"
+            class="btn rounded-2 mt-4 mb-3 text-white w-100"
+            style="
+              background-color: #b43929;
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            "
+          >
+            Okay, Got It!
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const dismissButton = document.getElementById("dismissButton");
+        const modal = document.getElementById("customModal");
+
+        dismissButton.addEventListener("click", () => {
+          modal.classList.add("hidden"); // Hides the modal by adding the 'hidden' class
+        });
+      });
+    </script>
+    <script>
+      function navigateToMap(orgName = "", orgType = "") {
+        const geocoder = new google.maps.Geocoder();
+        console.log(orgName);
+        geocoder.geocode({ address: orgName }, (results, status) => {
+          if (status === "OK") {
+            const location = results[0].geometry.location;
+            const lat = location.lat();
+            const lng = location.lng();
+
+            // Passing lat, lng as query parameters in the URL to map.html
+            window.location.href = `map.html?lat=${lat}&lng=${lng}&orgType=${orgType}`;
+          }
+        });
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize popover with HTML content
+        var popoverTriggerList = Array.from(
+          document.querySelectorAll('[data-bs-toggle="popover"]')
+        );
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+          return new bootstrap.Popover(popoverTriggerEl, {
+            html: true, // Allow HTML content inside the popover
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

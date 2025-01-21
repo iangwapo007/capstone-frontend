@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BloodNet</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <script type="module" src="./js/system/main.js"></script>
+    <script type="module" src="./js/utils/utils.js"></script>
+    <script type="module" src="./js/auth/login.js"></script>
+
+    <meta name="theme-color" content="#31d53d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=League Spartan"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="backgroundimage1">
+    <div class="" id="donor" aria-hidden="true">
+      <div class="position-relative">
+        <div
+          style="
+            background-color: #b43929;
+            padding-top: 20px;
+            padding-bottom: 15px;
+          "
+        >
+          <h3 class="text-center fw-semibold text-white">Register as Donor</h3>
+        </div>
+        <button
+          type="button"
+          id="donor-back-btn"
+          class="my-5 ms-4 position-absolute top-0 start-0 translate-middle btn d-flex justify-content-center align-items-center"
+          data-bs-dismiss="modal"
+        >
+          <img
+            src="./assets/icon/left-arrow.png"
+            alt="Icon"
+            style="width: 20px; padding-bottom: 30px"
+          />
+        </button>
+        <div class="card-body modal-body-donor">
+          <div class="container">
+            <div
+              class="rounded-3 mt-2 py-2"
+              style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+            >
+              <span class="ms-3 fw-bold text-start"
+                ><small>Fill out the required information below:</small></span
+              >
+              <form action="">
+                <!-- Personal Info -->
+
+                <div class="pb-3">
+                  <div class="custom-input-container">
+                    <small
+                      ><input
+                        type="text"
+                        class="custom-input"
+                        placeholder="Full Name"
+                        aria-label="fullname"
+                    /></small>
+                  </div>
+                  <div class="custom-input-container">
+                    <input
+                      type="text"
+                      class="custom-input"
+                      placeholder="E-mail"
+                      aria-label="email"
+                    />
+                  </div>
+                  <div class="custom-input-container d-flex">
+                    <input
+                      type="text"
+                      class="custom-input flex-grow-1 me-2"
+                      placeholder="Birthday"
+                      aria-label="birthday"
+                    />
+                    <input
+                      type="text"
+                      class="custom-input flex-grow-0"
+                      placeholder="Age"
+                      aria-label="age"
+                      style="width: 110px"
+                    />
+                  </div>
+                  <div class="custom-input-container">
+                    <input
+                      type="text"
+                      class="custom-input"
+                      placeholder="Phone Number"
+                      aria-label="phonenumber"
+                    />
+                  </div>
+                  <div class="custom-input-container d-flex">
+                    <input
+                      type="text"
+                      class="custom-input flex-grow-1 me-2"
+                      placeholder="Address"
+                      aria-label="address"
+                    />
+                    <select
+                      class="custom-input flex-grow-0"
+                      aria-label="Blood Type"
+                    >
+                      <option value="" disabled selected>Blood Type</option>
+                      <option value="A+">A+</option>
+                      <option value="A-">A-</option>
+                      <option value="B+">B+</option>
+                      <option value="B-">B-</option>
+                      <option value="AB+">AB+</option>
+                      <option value="AB-">AB-</option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O-</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Questions -->
+                <div>
+                  <div class="mx-3 d-flex align-items-start">
+                    <img
+                      src="./assets/icon/warning.png"
+                      width="15px"
+                      alt=""
+                      class="me-2 warning-margin"
+                    />
+                    <p class="fw-normal mb-0">
+                      <small>
+                        <strong
+                          >Please answer the following questions honestly. Any
+                          misinformation may affect your eligibility to donate
+                          blood.<br />
+                          Leave blank if none.</strong
+                        ><br />
+                      </small>
+                    </p>
+                  </div>
+                  <div class="custom-input-container">
+                    <input
+                      type="text"
+                      class="custom-input"
+                      placeholder="Medical History"
+                      aria-label="medical_history"
+                    />
+                  </div>
+                  <div class="custom-input-container">
+                    <input
+                      type="text"
+                      class="custom-input"
+                      placeholder="Current Medications"
+                      aria-label="current_medications"
+                    />
+                  </div>
+                  <div class="custom-input-container">
+                    <input
+                      type="text"
+                      class="custom-input"
+                      placeholder="Allergies"
+                      aria-label="allergies"
+                    />
+                  </div>
+                </div>
+
+                <!-- Emergency Contact -->
+                <div>
+                  <span class="ms-3 fw-bold text-start"
+                    ><small
+                      >Provide a contact in case of Emergency:</small
+                    ></span
+                  >
+                  <div class="custom-input-container">
+                    <input
+                      type="text"
+                      class="custom-input"
+                      placeholder="Emergency contact name"
+                      aria-label="emergency_name"
+                    />
+                  </div>
+                  <div class="custom-input-container">
+                    <input
+                      type="text"
+                      class="custom-input"
+                      placeholder="Relationship (e.g., Guardian, Parent)"
+                      aria-label="emergency_relationship"
+                    />
+                  </div>
+                  <div class="custom-input-container">
+                    <input
+                      type="text"
+                      class="custom-input"
+                      placeholder="Phone Number (Emergency Contact)"
+                      aria-label="emergency_phonenumber"
+                    />
+                  </div>
+                  <div
+                    class="custom-checkbox-container d-flex align-items-start mx-4 mb-3"
+                  >
+                    <input
+                      type="checkbox"
+                      id="customCheckbox"
+                      class="custom-checkbox mt-1"
+                    />
+                    <label class="custom-checkbox-padding" for="customCheckbox">
+                      I consent to the collection and use of my personal data
+                      for blood donation purposes.
+                    </label>
+                  </div>
+
+                  <div class="text-center mx-3">
+                    <button
+                      type="button"
+                      class="btn rounded-2 mt-2 text-white w-100"
+                      style="
+                        background-color: #b43929;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                      "
+                    >
+                      Register as Donor
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

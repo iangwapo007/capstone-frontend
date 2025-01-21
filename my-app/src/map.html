@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BloodNet</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <script type="module" src="./js/system/main.js"></script>
+
+    <meta name="theme-color" content="#31d53d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=League Spartan"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Start of Navbar -->
+    <nav
+      class="navbar bg-body-tertiary fixed-bottom custom-shadow league-spartan-regular"
+    >
+      <div class="container-fluid">
+        <div class="d-flex justify-content-center w-100">
+          <div class="d-flex w-100" style="max-width: 600px">
+            <!-- Map Option  -->
+            <div class="text-center flex-grow-1 position-relative">
+              <a href="map.html" class="nav-link">
+                <div class="focus">
+                  <span class="invisible">123456789asa</span>
+                </div>
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/pin (1).png"
+                    alt="Map"
+                    width="24px"
+                  /></button
+                ><br />
+                <span style="color: #b43929; font-weight: bold"> Map </span>
+              </a>
+            </div>
+
+            <!-- Find Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="find.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/search.png"
+                    alt="Find"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Find </span>
+              </a>
+            </div>
+
+            <!-- Nearby Option  -->
+            <!-- <div class="text-center flex-grow-1 opacity-50">
+              <a href="nearby.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/hospital.png"
+                    alt="Nearby"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text active-text"> Nearby </span>
+              </a>
+            </div> -->
+
+            <!-- Donor Option -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="donor.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/donor.png"
+                    alt="Donor"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Donor </span>
+              </a>
+            </div>
+
+            <!-- Events Option  -->
+            <div class="text-center flex-grow-1 opacity-50">
+              <a href="events.html" class="nav-link">
+                <button type="button" class="btn btn-nav">
+                  <img
+                    src="./assets/icon/notification.png"
+                    alt="Events"
+                    width="24px"
+                  /></button
+                ><br />
+                <span class="nav-text"> Events </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+
+    <!-- Display Map -->
+    <div id="map"></div>
+    <!-- Display Map -->
+
+    <script src="./js/system/map.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ZLIPWC70d4HqdODaS1zopmod2YXUd94&loading=async&callback=initMap&v=weekly&libraries=marker"
+      async
+      defer
+    ></script>
+    <!-- <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const userLat = parseFloat(urlParams.get("userLat"));
+      const userLng = parseFloat(urlParams.get("userLng"));
+      const destLat = parseFloat(urlParams.get("destLat"));
+      const destLng = parseFloat(urlParams.get("destLng"));
+
+      function initMap() {
+        const userLocation = { lat: userLat, lng: userLng };
+        const destination = { lat: destLat, lng: destLng };
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: userLocation,
+          zoom: 14,
+        });
+
+        const directionsService = new google.maps.DirectionsService();
+        const directionsRenderer = new google.maps.DirectionsRenderer();
+        directionsRenderer.setMap(map);
+
+        directionsService.route(
+          {
+            origin: userLocation,
+            destination: destination,
+            travelMode: google.maps.TravelMode.DRIVING,
+          },
+          (response, status) => {
+            if (status === google.maps.DirectionsStatus.OK) {
+              directionsRenderer.setDirections(response);
+            } else {
+              alert("Directions request failed due to " + status);
+            }
+          }
+        );
+      }
+
+      window.onload = initMap;
+    </script> -->
+  </body>
+</html>

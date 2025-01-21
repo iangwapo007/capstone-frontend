@@ -1,0 +1,953 @@
+/* MAP */
+#map {
+  height: 100vh;
+}
+
+/* LOADING SCREEN */
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* CUSTOM FONT */
+
+.text-main {
+  color: #b43929;
+}
+
+/* POPPINS FONT */
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* LEAGUE SPARTAN FONT */
+.league-spartan-thin {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.league-spartan-extralight {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.league-spartan-light {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.league-spartan-regular {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.league-spartan-medium {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.league-spartan-semibold {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.league-spartan-bold {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.league-spartan-extrabold {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.league-spartan-black {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Italic Styles */
+.league-spartan-thin-italic {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.league-spartan-extralight-italic {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.league-spartan-light-italic {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.league-spartan-regular-italic {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.league-spartan-medium-italic {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.league-spartan-semibold-italic {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.league-spartan-bold-italic {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.league-spartan-extrabold-italic {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.league-spartan-black-italic {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* BACKGROUND IMAGE */
+
+.backgroundimage {
+  background-image: url("../assets/imgs/white_background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.backgroundimage1 {
+  background-image: url("../assets/imgs/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.backgroundcolor {
+  background-color: #f5f5f5;
+}
+
+.bg-bloodnet {
+  background-color: #b43929;
+  color: #b43929;
+}
+
+.white {
+  background-color: #ffffff;
+}
+
+/* LOADING SCREEN TEXT FLASH */
+
+.flash-text {
+  animation: flash 1s infinite; /* Adjust the duration and timing as needed */
+  text-align: center;
+  font-size: 1.5rem; /* Adjust font size as needed */
+  color: gray; /* Ensure text color contrasts with background */
+}
+
+/* OUTLINE */
+
+.btn-outline-main {
+  outline: 1px solid #b43929;
+}
+
+/* BACKGROUND COLOR */
+
+.bg-main {
+  background-color: #b43929 !important;
+}
+
+.custom-dropdown-width {
+  width: 250px;
+}
+
+.custom-shadow {
+  box-shadow: 30px 30px 60px rgba(0, 0, 0, 1);
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.focus {
+  position: absolute;
+  border-top: 3px #b43929 solid !important;
+  top: -8px;
+}
+
+body {
+  font-family: "League Spartan" !important;
+}
+
+/* Custom Margins */
+
+.custom-margin {
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.table {
+  width: 100%;
+}
+
+.table th {
+  width: 33.33%; /* Adjust this based on the number of columns */
+  margin: 0 1px;
+}
+
+.outline {
+  outline: black;
+}
+
+.modal-body {
+  max-height: calc(100vh - 315px); /* Adjust this value as needed */
+  overflow-y: auto;
+}
+
+.modal-body-donor {
+  max-height: calc(100vh - 170px); /* Adjust this value as needed */
+  overflow-y: auto;
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px; /* Adjust height as needed */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* Fades from transparent to black */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.warning-margin {
+  margin-top: 3px;
+}
+
+.mail-margin {
+  margin-top: 1.5px;
+}
+
+.hours-margin {
+  margin-top: -0.5px;
+}
+
+.card-margin {
+  margin-bottom: 30px;
+}
+
+.custom-input-container {
+  position: relative;
+  margin: 15px; /* Adjust as needed */
+}
+
+.custom-input-container.d-flex {
+  display: flex; /* Use Flexbox to align inputs */
+  align-items: center; /* Align items vertically centered */
+}
+
+.custom-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #ffffff; /* Border color */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 15px; /* Font size */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transition for smooth effect */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.custom-input::placeholder {
+  color: #888; /* Placeholder color */
+}
+
+.custom-input:focus {
+  border-color: #b43929; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(180, 57, 41, 0.5); /* Optional shadow effect */
+  outline: none; /* Remove default outline */
+}
+
+/* Additional styles for select to match input height */
+.custom-input-container select {
+  width: 150px; /* Keep width as specified */
+  padding: 10px 15px; /* Match input field padding */
+  border: 2px solid #ffffff; /* Same border color */
+  border-radius: 10px; /* Same border radius */
+  font-size: 12px; /* Same font size */
+  background-color: white; /* Background color */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Match shadow */
+  appearance: none; /* Remove default arrow */
+}
+
+.custom-input-container select:focus {
+  border-color: #b43929; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(180, 57, 41, 0.5); /* Optional shadow effect */
+  outline: none; /* Remove default outline */
+}
+
+.custom-input-container select::after {
+  content: "";
+  position: absolute;
+  right: 15px; /* Adjust as needed for spacing */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center correction */
+  border: solid transparent; /* Required for arrow */
+  border-width: 5px 5px 0; /* Arrow size */
+  border-top-color: #b43929; /* Arrow color */
+  pointer-events: none; /* Prevent interaction */
+}
+
+/* Custom Checkbox */
+
+.custom-checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox {
+  display: none; /* Hide default checkbox */
+}
+
+.custom-checkbox + label {
+  position: relative;
+  padding-left: 30px; /* Space for the custom checkbox */
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+}
+
+/* Create custom checkbox */
+.custom-checkbox + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #b43929; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Checkmark when checked */
+.custom-checkbox:checked + label::before {
+  background-color: #b43929; /* Fill color when checked */
+  border-color: #b43929; /* Border color when checked */
+}
+
+.custom-checkbox:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 7px;
+  top: 30px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+}
+
+.custom-checkbox-padding {
+  padding-top: 25px;
+}
+
+.event-padding {
+  padding-bottom: 65%;
+}
+
+/* Custom underline with color */
+.custom-underline {
+  text-decoration: underline;
+  text-decoration-color: #b43929; /* Customize to any color */
+  text-underline-offset: 2px; /* Adjust the distance between text and underline */
+  text-decoration-thickness: 2px; /* Adjust the thickness of the underline */
+}
+
+.cover-photo {
+  position: relative;
+  width: 100%;
+  height: 120px; /* Adjust to your desired height */
+  background-color: #b43929; /* Cover photo background color */
+  overflow: visible; /* Ensures that content outside the container is visible */
+}
+
+.profile-icon {
+  position: absolute;
+  top: 95%; /* Adjust to position vertically (centered here) */
+  left: 25px; /* Adjust to position horizontally */
+  transform: translateY(-50%); /* Ensures vertical centering */
+  width: 85px; /* Adjust the size of the profile icon */
+  height: 85px; /* Ensures the icon is round */
+  border-radius: 50%; /* Makes the profile icon round */
+  border: 3px solid rgb(255, 255, 255); /* Optional: Border around the profile icon */
+  z-index: 10; /* Ensures it's above other content */
+}
+
+/* Remove the sliding indicator (underline) from the active nav-link */
+.nav-pills .nav-link {
+  background-color: transparent;
+  color: #000; /* Black text for inactive links */
+  border: none;
+  box-shadow: none;
+  text-decoration: none; /* Ensure there's no text decoration (underline) */
+}
+
+/* For the active state, remove the bottom border that gives the underline effect */
+.nav-pills .nav-link.active {
+  background-color: #b43929 !important; /* Red background */
+  color: #fff !important; /* White text */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-bottom: none !important; /* Explicitly remove the underline */
+}
+
+/* Remove the underline from the entire nav-pills component */
+.nav-pills {
+  border-bottom: none !important; /* Make sure no bottom border is applied */
+  box-shadow: none !important; /* Remove any default shadowing */
+}
+
+/* Container for the horizontally scrollable pills */
+.nav-pills-container {
+  background-color: transparent;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  white-space: nowrap; /* Ensure the items stay on one line */
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+/* Ensure nav items display in a row (not stacked) */
+.nav-pills {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping to new lines */
+}
+
+/* Prevent the nav items from wrapping and ensure they scroll horizontally */
+.nav-pills .nav-item {
+  flex: 0 0 auto; /* Ensure items don't shrink or grow */
+}
+
+/* Optional: Add custom scrollbar styling */
+.nav-pills-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.nav-pills-container::-webkit-scrollbar-thumb {
+  background-color: #b43929;
+  border-radius: 4px;
+}
+
+.nav-pills-container::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+/* Custom Modal Styles */
+.custom-modal-overlay {
+  display: flex; /* Use flexbox to center the modal content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Transparent background */
+  z-index: 9999;
+}
+
+.custom-modal-content {
+  padding: 20px;
+  margin-left: 30px; /* Left margin */
+  margin-right: 30px; /* Right margin */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: white; /* Ensure background color */
+}
+
+.custom-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.custom-modal-title {
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.custom-modal-body {
+  margin-top: 15px;
+}
+
+.custom-modal-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Space between buttons */
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* CUSTOM DROPDOWN */
+/* Custom Dropdown Styles */
+.custom-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-dropdown-btn {
+  background-color: #b43929; /* Button background color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.custom-dropdown-btn:hover {
+  background-color: #9a3224; /* Darker shade on hover */
+}
+
+.custom-dropdown-icon {
+  width: 15px;
+  margin-left: 10px;
+}
+
+.custom-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.custom-dropdown-item {
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+.custom-dropdown-item:hover {
+  background-color: #f8f8f8;
+}
+
+.custom-dropdown-btn:focus + .custom-dropdown-menu,
+.custom-dropdown-menu:hover {
+  display: block;
+}
+
+/* Ensure the text doesn't overflow and show ellipsis */
+.dropdown-item {
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide text that overflows */
+  text-overflow: ellipsis; /* Show ellipsis (...) when the text is too long */
+  max-width: 350px; /* Set a maximum width for the dropdown item */
+  display: block; /* Ensure each item is a block element */
+}
+
+/* INPUT FIELDS */
+
+/* .form-floating .form-control:focus ~ label,
+.form-floating .form-control:not(:placeholder-shown) ~ label {
+  transform: translateY(-1.5rem) scale(0.85) !important;
+  font-size: 17px !important;
+}
+
+.form-floating input,
+.form-floating select {
+  height: calc(3.5rem + 2px) !important;
+  border: 1px solid #aaabac !important;
+  border-radius: 0.25rem !important;
+  background-color: none !important;
+}
+
+.form-floating textarea {
+  height: calc(100px) !important;
+  border: 1px solid #aaabac !important;
+  border-radius: 0.25rem !important;
+}
+
+.form-floating label {
+  padding: 1rem 0.75rem !important;
+  background-color: transparent !important;
+  font-size: 15px !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: #b43929 !important;
+} */
+
+/* Floating label styles */
+.form-floating .form-control:focus ~ label,
+.form-floating .form-control:not(:placeholder-shown) ~ label {
+  transform: translateY(-1.5rem) scale(0.85) !important;
+  font-size: 17px !important;
+  color: #b43929 !important;
+}
+
+.form-floating input,
+.form-floating select {
+  height: calc(3.5rem + 2px) !important;
+  border: 1px solid #aaabac !important;
+  border-radius: 0.25rem !important;
+  background-color: transparent !important;
+  padding: 1rem 0.75rem !important;
+}
+
+.form-floating textarea {
+  height: calc(100px) !important;
+  border: 1px solid #aaabac !important;
+  border-radius: 0.25rem !important;
+}
+
+.form-floating label {
+  padding: 1rem 0.75rem !important;
+  background-color: transparent !important;
+  font-size: 15px !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: #b43929 !important;
+}
+
+/* Button styles */
+.submit-btn {
+  background-color: #b43929;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #9e3023;
+}
+
+/* Overall form layout */
+#form_update {
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form header styles */
+.form-header h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.form-header h3 {
+  font-size: 20px;
+  color: #333;
+}
+
+.form-header p {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* Grouping inputs */
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group-inline {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.floating-label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 16px;
+  color: #aaa;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+  padding-top: 24px; /* to make space for floating label */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #b43929;
+  background-color: #fff;
+  outline: none;
+}
+
+.form-group input:focus + .floating-label,
+.form-group input:not(:focus):valid + .floating-label,
+.form-group select:focus + .floating-label {
+  top: -10px;
+  font-size: 12px;
+  color: #b43929;
+}
+
+/* Divider between sections */
+.section-divider hr {
+  border: 1px solid #eee;
+  margin: 30px 0;
+}
+
+/* Button styles */
+.submit-btn {
+  background-color: #b43929;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #9e3023;
+}
+
+.popover-body {
+  max-height: 500px; /* Adjust height as needed */
+  overflow-y: auto; /* Enables scrolling */
+}
+
+.okay-modal-overlay {
+  display: none; /* Hide initially */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1051; /* Set a z-index higher than Bootstrap's modal (1050) */
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: dim background */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content for "Okay, Got It." button */
+.okay-modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  z-index: 1060; /* Ensure modal content is above the overlay */
+}
+
+/* Button inside the Modal */
+.okay-dismiss-button {
+  background-color: #b43929;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Hover effect for the button */
+.okay-dismiss-button:hover {
+  background-color: #9e3024;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1040; /* Lower z-index for this modal */
+}
+
+.modal-dialog {
+  z-index: 1041; /* Slightly higher to keep modal content above the backdrop */
+}
